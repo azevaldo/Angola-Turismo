@@ -1,111 +1,293 @@
-# 🇦🇴 Angola Tourism Insight
+🇦🇴 Angola Tourism Insight
 
-## 📘 Visão Geral
-O **Angola Tourism Insight** é um projeto de análise e previsão de dados turísticos de Angola.  
-Esta fase — **Preparação dos Dados e Engenharia de Recursos** — visa consolidar e transformar dados brutos em conjuntos limpos e prontos para análise e modelagem.
+O Angola Tourism Insight é uma plataforma digital de análise e previsão de dados turísticos de Angola, desenvolvida para utilizar dados históricos e variáveis relacionadas ao turismo para gerar previsões e informações que apoiem a tomada de decisões.
 
-Basicamente começamos a tratablhar na  parte pratica do projeto e ainda está em desenvolvimento, resolvemos fazer o projeto web, ou seja teremos um modelo de machine learn em python que será capaz de prever o numero de turistas estrangeiros seguindo determinados parametros, então o projeto web está sendo desenvolvido utilizando o fremework laravel, estamos desenvolvendo o sistema de autenticação e alguns detalhes importantes
+O projeto integra uma aplicação web desenvolvida com Laravel e uma API em Python, responsável pela utilização do modelo de Machine Learning para realizar previsões.
 
----
+O projeto foi desenvolvido no contexto de um projeto Capstone pela equipe formada por:
 
-Descrição Documental da Plataforma “Angola Tourism Insight”
-1. Introdução
-A Angola Tourism Insight é uma plataforma digital desenvolvida com o propósito de reunir, analisar e disponibilizar informações sobre o turismo em Angola, fornecendo previsões e indicadores que auxiliam na tomada de decisão estratégica e na promoção do desenvolvimento sustentável do setor.
-O sistema foi concebido para integrar dados climáticos, ambientais e sociais, associando-os ao número de visitantes registados em diferentes localidades do país. A partir dessa base de dados, o sistema realiza previsões de fluxo turístico e gera sugestões de intensidade turística (pico, médio ou baixo), permitindo um melhor planeamento de políticas públicas e de iniciativas privadas ligadas ao turismo.
-2. Objetivo da Plataforma
-O principal objetivo da plataforma é apoiar o desenvolvimento sustentável do turismo angolano através da digitalização, análise e previsão de dados turísticos.
-Para além disso, o sistema serve como um repositório institucional, onde são armazenados e publicados documentos e relatórios oficiais relacionados ao setor do turismo e ambiente, como estudos, políticas, pautas e relatórios de campo.
-3. Estrutura Geral do Sistema
-A plataforma está organizada em duas áreas principais:
-1.	Área Pública:
-Disponível a todos os visitantes, onde é possível visualizar informações gerais sobre o turismo, previsões e relatórios públicos.
-2.	Área Administrativa:
-Acesso restrito a utilizadores autenticados (administradores, técnicos e analistas), onde são realizados o carregamento de dados, gestão de arquivos, análise estatística e publicação de relatórios.
-4. Funcionalidades Principais
-4.1. Previsão de Turistas
-Esta é a funcionalidade central do sistema.
-Com base em dados históricos de turistas estrangeiros (ano, mês, localidade, temperatura, precipitação e número de visitantes), o sistema aplica modelos de previsão para estimar o número provável de turistas em determinada localidade e período.
-Essas previsões são acompanhadas de indicadores visuais e analíticos, que ajudam a interpretar o nível de fluxo turístico esperado:
-•	Pico Turístico: quando o número previsto de visitantes está acima da média máxima histórica da localidade;
-•	Médio: quando o valor previsto está entre a média mínima e a média máxima;
-•	Baixo: quando o número de visitantes está abaixo da média mínima histórica.
-Esses padrões foram definidos com base na análise estatística das médias históricas de turistas por província, permitindo estabelecer intervalos de referência próprios para cada região.
-A funcionalidade permite ainda gerar gráficos comparativos entre períodos, acompanhar a evolução do turismo e identificar tendências sazonais.
-4.2. Sugestões Automáticas
-Com base nas previsões e nos padrões de fluxo turístico, o sistema gera sugestões automáticas que orientam os utilizadores sobre a situação turística esperada:
-•	Sugestão de Pico: indica elevado potencial turístico, ideal para intensificar ações de marketing e eventos culturais;
-•	Sugestão Média: indica estabilidade, sendo propício para manutenção de serviços e monitorização contínua;
-•	Sugestão Baixa: indica retração turística, recomendando estratégias de promoção, revisão de preços ou estímulo de atividades locais.
-Estas sugestões também são relacionadas aos Objetivos de Desenvolvimento Sustentável (ODS), destacando como o turismo sustentável pode contribuir para:
-•	ODS 8 – Trabalho decente e crescimento económico;
-•	ODS 11 – Cidades e comunidades sustentáveis;
-•	ODS 13 – Ação contra a mudança global do clima.
-4.3. Gestão de Arquivos e Publicações
-A plataforma inclui um módulo para gestão e publicação de documentos oficiais e técnicos.
-Os arquivos podem ser:
-•	Relatórios turísticos;
-•	Estudos ambientais;
-•	Dados estatísticos;
-•	Atas, pautas e outros documentos de interesse público.
-O processo segue um fluxo de validação e aprovação:
-1.	Envio: o utilizador (prestador ou técnico) carrega o arquivo no sistema, preenchendo título, descrição, categoria e metadados.
-2.	Validação: o administrador analisa o conteúdo e decide se o documento será:
-o	Aprovado: publicado e disponível ao público;
-o	Pendente: aguardando revisão ou complementação;
-o	Arquivado: guardado para consulta interna, mas não exibido publicamente.
-3.	Publicação: os arquivos aprovados são listados na área pública da plataforma e podem ser visualizados ou descarregados conforme o tipo de ficheiro.
-A plataforma reconhece automaticamente diferentes tipos de arquivos (PDF, imagens, planilhas, textos, etc.), permitindo pré-visualização e download.
-4.4. Histórico e Metadados
-Cada arquivo e previsão armazenam informações complementares, como:
-•	Data de criação e atualização;
-•	Nome do utilizador que realizou o upload;
-•	Tipo de arquivo e tamanho;
-•	Estado de aprovação (pendente, aprovado, arquivado).
-Esses dados garantem rastreabilidade e transparência, além de permitir auditorias e histórico das alterações realizadas.
-5. Tipos de Utilizadores e Permissões
-A plataforma organiza o acesso e as responsabilidades através de três tipos principais de utilizadores, descritos a seguir. Cada tipo tem um conjunto específico de permissões que reflete o seu papel operativo na gestão das previsões, dos dados e dos ficheiros.
-5.1 Administrador
-O Administrador é o utilizador com maior nível de privilégios e é responsável pela administração global da plataforma. Principais responsabilidades e permissões:
-•	Gerir todos os registos do sistema (utilizadores, províncias, sugestões, itens de sugestão, históricos, etc.).
-•	Aprovar, arquivar ou manter pendentes os ficheiros submetidos pelos prestadores; definir políticas de publicação.
-•	Definir e gerir papéis/permissões (atribuir ou revogar a função de Gestor, Administrador, Prestador).
-•	Aceder a todos os relatórios e históricos; executar ações administrativas sobre previsões quando necessário.
-•	Configurar parâmetros globais do sistema (limiares de classificação, definições de seeders, políticas de upload e quotas).
-Resumindo: o Administrador governa a plataforma e toma decisões finais sobre publicação e configuração.
-5.2 Gestor (provincial)
-O Gestor é responsável por conduzir a atividade operacional da plataforma no nível da província. Importante notar que uma província pode ter vários Gestores atribuídos — isto permite coordenação entre técnicos locais e cobertura por diferentes turnos/equipa.
-Permissões e responsabilidades principais do Gestor:
-•	Criar e submeter previsões para a(s) localidade(s) da sua província, utilizando o formulário com parâmetros climáticos e de contexto.
-•	Aceder ao histórico de previsões da sua província (registos guardados em historicos), incluindo todas as entradas feitas por si e por outros gestores da mesma província.
-•	Consultar as sugestões previamente geradas (Pico / Médio / Baixo) e os itens de sugestão associados às previsões da sua província.
-•	Utilizar os resultados e as sugestões para produzir recomendações locais ou relatórios para os decisores provinciais.
-•	Não tem permissão para aprovar/arquivar ficheiros submetidos por prestadores — essa função é exclusiva do Administrador.
-•	Pode, conforme política da instituição, solicitar revisão de ficheiros ou adicionar comentários às previsões/históricos.
-Resumindo: o Gestor operacionaliza as previsões e utiliza o histórico e as sugestões para planear ações provinciais.
-5.3 Prestador
-O Prestador é o utilizador responsável por submeter conjuntos de dados e documentos (ficheiros) ao repositório da plataforma. Este papel privilegia a contribuição de dados por entidades externas ou internas.
-Permissões e responsabilidades principais do Prestador:
-•	Submeter ficheiros (CSV, Excel, PDF, DOCX, imagens, etc.) com titulo, descricao, tags e metadados.
-•	Gerir apenas os seus próprios ficheiros: editar metadados, substituir conteúdo enquanto o ficheiro estiver em estado pendente ou consoante as regras definidas.
-•	Visualizar o estado dos seus ficheiros (pendente, aprovado, arquivado) e receber notificações sobre mudanças de estado.
-•	Não tem permissão para aprovar, arquivar ou publicar ficheiros de outros prestadores; essa ação cabe ao Administrador.
-•	Pode apagar os seus ficheiros se as regras internas o permitirem (por exemplo, se estiverem ainda pendentes); uma vez aprovados e publicados, a remoção pode exigir ação administrativa.
-Resumindo: o Prestador contribui com dados e gerencia os seus próprios uploads; não controla aprovação ou publicação final.
-Observações Operacionais
-•	Rastreamento e responsabilidade: cada ação relevante (criação de previsão, submissão de ficheiro, aprovação, arquivamento) fica registada para fins de auditoria e rastreabilidade, com indicação do user_id e timestamp.
-•	Multiplicidade de gestores: a possibilidade de ter vários gestores por província permite redundância operacional e partilha de responsabilidades entre equipa provincial.
-•	Políticas de acesso: as permissões devem ser implementadas com Policies/Gates no backend para garantir que cada rota ou ação verifica o papel do utilizador antes de executar operações sensíveis.
-6. Relação com os Objetivos de Desenvolvimento Sustentável (ODS)
-O Angola Tourism Insight contribui diretamente para várias metas dos ODS:
-ODS	Objetivo	Relação com a Plataforma
-ODS 8	Promover o crescimento económico sustentado, inclusivo e sustentável	Através da análise e previsão do fluxo turístico, incentiva a criação de políticas que valorizem o emprego e o empreendedorismo local.
-ODS 11	Tornar as cidades e comunidades mais sustentáveis	Facilita o planeamento urbano e turístico responsável, reduzindo pressões sazonais e promovendo equilíbrio regional.
-ODS 13	Ação climática	Integra dados meteorológicos (temperatura e precipitação) para alinhar o turismo às condições ambientais e à resiliência climática.
+Ângelo Rocha Garcia
+Azevaldo Miguel Caluaco
+Dorivaldo Catala Mandele
+Francisco Ramos Cadete
+Francisco Benguela José
+Reinaldo Sagrado Paulo
+🎯 Objetivo
 
-7. Considerações Finais
-A Angola Tourism Insight representa um passo significativo rumo à digitalização e modernização da gestão turística nacional.
-Ao unir dados estatísticos, previsão inteligente e gestão documental, a plataforma oferece uma visão clara e integrada do panorama turístico angolano.
-Além de promover transparência e acessibilidade à informação, o sistema reforça o compromisso com o desenvolvimento sustentável, apoiando decisões baseadas em dados e contribuindo para a valorização das potencialidades turísticas de Angola.
+O objetivo do Angola Tourism Insight é utilizar dados turísticos e ambientais para identificar padrões e realizar previsões sobre o fluxo de turistas em Angola.
 
+A plataforma procura transformar dados históricos em informações úteis para apoiar gestores, empresas e outros interessados no planejamento turístico.
 
+Entre os objetivos definidos para o projeto estão:
 
+Identificar padrões no comportamento turístico em Angola.
+Prever fluxos turísticos com base em diferentes variáveis.
+Disponibilizar informações e previsões através de uma plataforma web.
+Apoiar decisões relacionadas ao planejamento turístico.
+Promover uma abordagem baseada em dados para o desenvolvimento do turismo.
+
+O projeto também está relacionado aos Objetivos de Desenvolvimento Sustentável, especialmente aos ODS 8, 9 e 11.
+
+🧠 Machine Learning
+
+A previsão é realizada através de um modelo de Machine Learning desenvolvido em Python.
+
+O projeto considera variáveis relacionadas ao fluxo turístico e às condições que podem influenciar o número de visitantes, como:
+
+Dados históricos de turistas.
+Localidade.
+Período.
+Temperatura.
+Precipitação.
+Eventos.
+Feriados.
+Sazonalidade.
+
+A documentação do projeto prevê a utilização de algoritmos como Random Forest, Regressão Linear, Regressão Ridge e Redes Neurais para a modelagem preditiva.
+
+📊 Principais funcionalidades
+🔮 Previsão de turistas
+
+A funcionalidade principal da plataforma é a previsão do número de turistas para determinada localidade e período.
+
+Os resultados podem ser classificados em três níveis:
+
+Pico: fluxo turístico elevado.
+Médio: fluxo turístico dentro de uma faixa intermediária.
+Baixo: fluxo turístico reduzido.
+
+Essa classificação é baseada na análise estatística dos dados históricos por região.
+
+💡 Sugestões inteligentes
+
+A plataforma pode gerar sugestões com base nos resultados das previsões:
+
+Sugestão de Pico.
+Sugestão Média.
+Sugestão Baixa.
+
+Essas sugestões procuram auxiliar na interpretação dos resultados e no planejamento de ações relacionadas ao turismo.
+
+📁 Gestão de arquivos e publicações
+
+A plataforma possui um módulo para gestão de documentos e arquivos relacionados ao turismo.
+
+Podem ser disponibilizados:
+
+Relatórios turísticos.
+Estudos.
+Dados estatísticos.
+Documentos técnicos.
+Outros documentos relacionados ao setor.
+
+Os arquivos podem passar por diferentes estados, como:
+
+Pendente.
+Aprovado.
+Arquivado.
+
+Os documentos aprovados podem ser disponibilizados na área pública da plataforma.
+
+📈 Histórico e informações
+
+A plataforma mantém informações relacionadas às previsões e aos documentos, permitindo acompanhar dados como:
+
+Data de criação.
+Data de atualização.
+Usuário responsável.
+Tipo de arquivo.
+Estado de aprovação.
+Histórico das operações.
+👥 Tipos de utilizadores
+
+A plataforma possui diferentes níveis de acesso.
+
+Administrador
+
+Possui o maior nível de acesso ao sistema.
+
+É responsável pela administração geral da plataforma, incluindo gerenciamento de utilizadores, documentos, previsões, permissões e configurações.
+
+Gestor
+
+Atua no nível operacional e pode trabalhar com previsões e informações relacionadas à sua província.
+
+Pode consultar históricos e utilizar os resultados das previsões para apoiar análises e recomendações locais.
+
+Prestador
+
+Responsável principalmente pelo envio de dados e documentos para a plataforma.
+
+Pode gerenciar os seus próprios arquivos de acordo com as regras de publicação do sistema.
+
+A definição desses papéis e respectivas permissões está descrita na documentação funcional do projeto.
+
+🏗️ Arquitetura do projeto
+
+O projeto está dividido em diferentes componentes:
+
+Angola-Tourism-Insight/
+│
+├── api-modelo/
+│   ├── README.md
+│   ├── index.py
+│   ├── modelo_prev-turista.joblib
+│   └── requirements.txt
+│
+├── docs/
+│   ├── ideação.pdf
+│   ├── Refinamento do modelo.pdf
+│   ├── Nota Conceitual e Plano de Implementação.pdf
+│   ├── Implantação Deployment.pdf
+│   └── Preparação dos dados e engenharia.pdf
+│
+├── laravel-app/
+│   └── README.md
+│
+├── notebooks/
+│   └── 001.ipynb
+│
+├── turistas3.sql
+│
+└── README.md
+api-modelo/
+
+Contém a API Python utilizada para disponibilizar o modelo de Machine Learning.
+
+laravel-app/
+
+Contém a aplicação web desenvolvida com Laravel.
+
+notebooks/
+
+Contém notebooks utilizados durante o desenvolvimento e análise do projeto.
+
+docs/
+
+Contém a documentação produzida durante as diferentes etapas do projeto.
+
+turistas3.sql
+
+Arquivo de backup da base de dados MySQL utilizada pela aplicação.
+
+🛠️ Tecnologias
+Aplicação web
+PHP
+Laravel
+HTML5
+CSS
+JavaScript
+Bootstrap
+API e Machine Learning
+Python
+Scikit-learn
+Pandas
+NumPy
+Joblib
+
+A documentação do projeto também registra o uso de ferramentas como Jupyter Notebook, TensorFlow, Matplotlib, Plotly e Streamlit no desenvolvimento da solução de dados e Machine Learning.
+
+⚙️ Instalação e execução
+
+O projeto possui duas partes que precisam ser configuradas:
+
+API Python
+Aplicação Laravel
+1. Executar a API Python
+
+Entre na pasta:
+
+cd api-modelo
+
+Instale as dependências:
+
+pip install -r requirements.txt
+
+Execute a API através do arquivo:
+
+python index.py
+
+A API deve permanecer em execução enquanto a aplicação Laravel estiver sendo utilizada.
+
+2. Configurar a aplicação Laravel
+
+Em outro terminal, entre na pasta:
+
+cd laravel-app
+
+Instale as dependências:
+
+composer install
+
+Gere a chave da aplicação:
+
+php artisan key:generate
+
+Configure o arquivo .env com os dados de conexão do MySQL.
+
+A base de dados utilizada pelo projeto é:
+
+turistas3
+
+O arquivo turistas3.sql, localizado na raiz do repositório, deve ser importado no MySQL.
+
+Depois da configuração do banco, execute:
+
+php artisan serve
+
+A aplicação poderá ser acessada através do endereço disponibilizado pelo Laravel.
+
+Importante: é necessária uma conexão com a Internet para utilizar o projeto.
+
+🔐 Contas de acesso
+
+O projeto possui contas de demonstração para diferentes perfis e províncias.
+
+Perfil	E-mail	Senha
+Administrador	admin@gmail.com	password
+Luanda	luanda@gmail.com	123456789
+Benguela	benguela@gmail.com	123456789
+Huíla	huila@gmail.com	123456789
+
+Atenção: estas credenciais são as fornecidas na documentação do projeto. Se forem credenciais reais utilizadas fora de um ambiente de demonstração, não devem ser mantidas publicamente no README.
+
+📚 Documentação
+
+A pasta docs/ contém os documentos produzidos durante o desenvolvimento do projeto, incluindo documentação sobre:
+
+Ideação.
+Preparação dos dados.
+Engenharia de recursos.
+Refinamento do modelo.
+Plano de implementação.
+Implantação e deployment.
+📄 Documentação específica
+
+Para informações sobre a aplicação Laravel:
+
+👉 README da aplicação Laravel
+
+Para informações sobre a API Python:
+
+👉 README da API Python
+
+🌱 Objetivos de Desenvolvimento Sustentável
+
+O projeto está relacionado aos seguintes ODS:
+
+ODS 8 — Trabalho Decente e Crescimento Económico
+ODS 9 — Indústria, Inovação e Infraestrutura
+ODS 11 — Cidades e Comunidades Sustentáveis
+
+A proposta do projeto relaciona análise de dados, previsão turística e desenvolvimento sustentável.
+
+👨‍💻 Equipe
+Ângelo Rocha Garcia
+Azevaldo Miguel Caluaco
+Dorivaldo Catala Mandele
+Francisco Ramos Cadete
+Francisco Benguela José
+Reinaldo Sagrado Paulo
+
+Angola Tourism Insight
+Plataforma de análise e previsão do fluxo turístico em Angola.
