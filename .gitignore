@@ -1,14 +1,47 @@
-/vendor
-/node_modules
-/.env
+/vendor/
+/node_modules/
+
+# Environment
+.env
+.env.*
+!.env.example
+.env.backup
+.env.production
+
+# IDE
 /.idea
 /.vscode
+
+# Laravel
 /public/storage
+/public/hot
+/public/build
 /storage/*.key
 /storage/*.log
 /storage/debugbar
+/storage/pail
+
+# Laravel antigo
+bootstrap/compiled.php
+app/storage/
+
+# Public path alternativo
+public_html/storage
+public_html/hot
+
+# Homestead
 Homestead.json
 Homestead.yaml
-.env.*.local
+/.vagrant
+
+# PHPUnit
+.phpunit.result.cache
+/.phpunit.cache
+
+# PHP
+.phpactor.json
+auth.json
+
+# NPM / Yarn
 npm-debug.log
 yarn-error.log
